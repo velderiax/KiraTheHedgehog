@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KIRA Meme Token</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Work Sans', sans-serif;
+      background: linear-gradient(to bottom, #0f0f0f, #1e1e1e);
+      color: #fefefe;
+    }
+
+    header {
+      text-align: center;
+      background-color: #111;
+    }
+
+    header img.banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    header img.logo {
+      width: 120px;
+      margin-top: -60px;
+      border-radius: 50%;
+      border: 4px solid #111;
+      background: #111;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+    }
+
+    .container {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1.title {
+      font-family: 'Julius Sans One', sans-serif;
+      font-size: 2.8rem;
+      color: #ffcc00;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+
+    .section h2 {
+      color: #ffcc00;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p, .section li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .tokenomics-chart {
+      margin: 2rem 0;
+    }
+
+    canvas {
+      max-width: 300px;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .card {
+      width: 260px;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.08);
+      text-align: left;
+    }
+
+    .community { background: #ffcc00; color: #000; }
+    .contributor { background: #00c8ff; color: #000; }
+    .marketing { background: #ff2e63; color: #000; }
+
+    .social {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .social a {
+      background: #ffcc00;
+      color: #111;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      padding: 2rem 0;
+      color: #aaa;
+    }
+
+    .how-to-buy {
+      background: #121212;
+      border: 2px solid #ffcc00;
+      border-radius: 20px;
+      padding: 2rem 1rem;
+    }
+
+    .how-to-buy h2 {
+      font-size: 2rem;
+      color: #ffcc00;
+      margin-bottom: 0.5rem;
+    }
+
+    .how-subtitle {
+      font-size: 1rem;
+      color: #fefefe;
+      margin-bottom: 2rem;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .how-card {
+      background: #1e1e1e;
+      border: 1px solid #444;
+      border-radius: 16px;
+      padding: 1.2rem;
+      flex: 1 1 280px;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .how-card h3 {
+      color: #ffcc00;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .how-card p {
+      color: #eee;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
+
+      .how-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="KIRA Banner.jpg" class="banner" alt="Banner">
+    <img src="KIRA PP.jpg" class="logo" alt="KIRA Logo">
+  </header>
+
+  <div class="container">
+    <h1 class="title">KIRA The Hedgehog</h1>
+
+    <div class="section">
+      <h2>About</h2>
+      <p>
+        KIRA is not just a meme — it's a movement. Built on Solana for speed and scalability, KIRA is your spiky, sassy sidekick in the memecoin jungle. No presale. No insiders. 100% fair launch. Fast, fun, and fueled by the community.
+      </p>
+    </div>
+
+    <div class="section how-to-buy">
+      <h2>How to Buy</h2>
+      <p class="how-subtitle">Follow these easy steps to become a KIRA holder</p>
+      <div class="how-steps">
+        <div class="how-card">
+          <h3>1. Connect Wallet</h3>
+          <p>Use a Solana-compatible wallet such as <strong>Phantom</strong> or <strong>Solflare</strong>. Ensure you're connected to the Solana network.</p>
+        </div>
+        <div class="how-card">
+          <h3>2. Get $SOL</h3>
+          <p>Buy or deposit $SOL from exchanges like Binance or Coinbase into your wallet to prepare for swapping.</p>
+        </div>
+        <div class="how-card">
+          <h3>3. Swap $SOL to $XIAN</h3>
+          <p>Use <a href="https://raydium.io/swap/?inputMint=sol&outputMint=GnaXkbmMV1zGK6bRCQnM9Jd6Jv2Hjw5b2PFVBaKEE5At" target="_blank" style="color:#00c8ff;">Raydium</a> to swap $SOL to $XIAN.</p>
+        </div>
+        <div class="how-card">
+          <h3>4. Bridge $XIAN to Mainnet</h3>
+          <p>Go to <a href="https://bridge.xian.org/" target="_blank" style="color:#00c8ff;">bridge.xian.org</a> to bridge your $XIAN from Solana to Mainnet.</p>
+        </div>
+        <div class="how-card">
+          <h3>5. Swap for $KIRA</h3>
+          <p>Use <strong>SNAKexchange</strong> or another Solana DEX to trade for $KIRA.<br><strong>CA:</strong> Will be updated soon</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Watch KIRA in Action</h2>
+      <video controls width="100%" style="max-width:720px; border-radius: 12px; box-shadow: 0 4px 12px rgba(255,255,255,0.1);" poster="KIRA PP.jpg">
+        <source src="kira desu.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="section">
+      <h2>Tokenomics</h2>
+      <div class="card-container">
+        <div class="card community">
+          <h3>80% Community</h3>
+          <p>80% of supply allocated to community at fair launch..</p>
+        </div>
+        <div class="card contributor">
+          <h3>10% Contributor</h3>
+          <p>10% of the supply is reserved for contributors who help build and support the ecosystem.</p>
+        </div>
+        <div class="card marketing">
+          <h3>10% Marketing</h3>
+          <p>10% of the supply is dedicated to strategic marketing and long-term exposure campaigns.</p>
+        </div>
+      </div>
+      <div class="tokenomics-chart">
+  <canvas id="tokenChart"></canvas>
+
+  <!-- Manual legend to ensure colors are always visible -->
+  <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 16px; height: 16px; background: #ffcc00; border-radius: 3px;"></div>
+      <span style="color: #fff; font-size: 0.9rem;">Community (80%)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 16px; height: 16px; background: #00c8ff; border-radius: 3px;"></div>
+      <span style="color: #fff; font-size: 0.9rem;">Contributor (10%)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 16px; height: 16px; background: #ff3b3f; border-radius: 3px;"></div>
+      <span style="color: #fff; font-size: 0.9rem;">Marketing (10%)</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Moved Community Links to bottom -->
+    <div class="section">
+      <h2>Community Links</h2>
+      <div class="social">
+        <a href="https://github.com/KiraTheHedgehog/kira" target="_blank">GitHub</a>
+        <a href="https://t.me/Kirahedgehog" target="_blank">Telegram</a>
+        <a href="https://x.com/kirahedgehog_" target="_blank">X (Twitter)</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 KIRA MEME TOKEN. Built by the community, for the community.
+    </footer>
+  </div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById('tokenChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Community (80%)', 'Contributor (10%)', 'Marketing (10%)'],
+        datasets: [{
+          data: [80, 10, 10],
+          backgroundColor: ['#ffcc00', '#00c8ff', '#ff3b3f'],
+          borderColor: '#1e1e1e',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          animateScale: true
+        },
+        plugins: {
+          legend: {
+            display: false  // ✅ disable default legend
+          },
+          title: {
+            display: true,
+            text: 'KIRA Token Distribution',
+            color: '#ffcc00',
+            font: {
+              size: 16
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
